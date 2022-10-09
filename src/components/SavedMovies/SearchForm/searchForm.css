@@ -1,0 +1,130 @@
+.searchForm {
+  width: 100%;
+  height: 222px;
+}
+.searchForm__form {
+  margin: 0;
+  padding: 0;
+  padding-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 70px;
+}
+.searchForm__fildSearch {
+  margin: 0;
+  padding: 0;
+  width: calc(98vw - 305px);
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border: 2px solid rgba(170, 170, 170, 0.2);;
+  border-radius: 50px;
+}
+.searchForm__inputText {
+  width: 90%;
+  padding: 0;
+  margin-left: 22px;
+  border: none;
+  font-family: Inter, Georgia, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #A0A0A0;
+}
+.searchForm__inputText:focus {
+  outline: none;
+  color: #000000;
+}
+.searchForm__buttonSearch {
+  width: 34px;
+  height: 34px;
+  margin-right: 7px;
+  background: #3456F3;
+  border: none;
+  border-radius: 48px;
+  background-image: url('../../../images/buttonSearch.svg');
+}
+.searchForm__textCheckbox {
+  margin: 0;
+  font-family: Inter, Georgia, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  color: #000000;
+}
+.searchForm__switch {
+  display: flex;
+  margin-left: 40px;
+}
+.searchForm__switchCheckbox {
+  position: absolute;
+  width: 1px; 
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+.searchForm__imgCheckbox {
+  display: block;
+  margin-left: 40px;
+  width: 36px;
+  height: 20px;
+  background-image: url('../../../images/checkboxDisableSearchForm.svg');
+}
+.searchForm__switchCheckbox:checked + .searchForm__imgCheckbox {
+  background-image: url('../../../images/checkboxActiveSearchForm.svg');
+}
+.searchForm__line {
+  width: calc(100vw - 140px);
+  margin: 83px 70px 10px;
+  border-bottom: 1px solid #E8E8E8;
+}
+@media screen and (max-width: 800px) {
+  .searchForm__form {
+    padding-top: 60px;
+    flex-direction: column;
+    margin: 0 30px;
+  }
+  .searchForm__fildSearch {
+    width: 100%;
+  }
+  .searchForm__buttonSearch {
+    margin: 7px 7px 0 0;
+  }
+  .searchForm__switch {
+    margin: 0;
+    margin-top: 38px;
+  }
+  .searchForm__imgCheckbox {
+    margin-left: 12px;
+  }
+  .searchForm__line {
+    width: calc(100vw - 60px);
+    margin: 57px 30px 10px;
+    border-bottom: 1px solid #E8E8E8;
+  }
+}
+@media screen and (max-width: 400px) {
+  .searchForm__form {
+    margin: 0 10px;
+  }
+  .searchForm__inputText {
+    font-size: 11px;
+  }
+  .searchForm__switch {
+    margin: 0;
+    margin-top: 45px;
+  }
+  .searchForm__textCheckbox {
+    font-size: 11px;
+  }
+  .searchForm__line {
+    width: calc(100vw - 28px);
+    margin: 44px 14px 10px;
+    border-bottom: 1px solid #E8E8E8;
+  }
+}
