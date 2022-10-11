@@ -1,38 +1,54 @@
 .searchForm {
   width: 100%;
-  height: 222px;
+  padding: 80px 0 10px 0;
 }
 .searchForm__form {
   margin: 0;
   padding: 0;
-  padding-top: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 0 70px;
+  background: #F9F9F9;
+  border-radius: 9px;
 }
 .searchForm__fildSearch {
   margin: 0;
   padding: 0;
   width: calc(98vw - 305px);
-  height: 48px;
+  height: 72px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #ffffff;
-  border: 2px solid rgba(170, 170, 170, 0.2);;
-  border-radius: 50px;
+  border: none;
 }
 .searchForm__inputText {
+  position: relative;
   width: 90%;
   padding: 0;
   margin-left: 22px;
   border: none;
+  background: #F9F9F9;
+  z-index: 1;
+}
+.searchForm__placeholder {
+  display:flex;
+  position: absolute;
+  z-index: 1;
+}
+.searchForm__placeholder_disable {
+  z-index: -1;
+}
+.searchForm__placeholderImg {
+  margin-left: 19px;
+}
+.searchForm__placaholderText {
   font-family: Inter, Georgia, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
+  background: #F9F9F9;
   color: #A0A0A0;
 }
 .searchForm__inputText:focus {
@@ -40,16 +56,21 @@
   color: #000000;
 }
 .searchForm__buttonSearch {
-  width: 34px;
+  width: 59px;
   height: 34px;
-  margin-right: 7px;
-  background: #3456F3;
+  background: #2BE080;
   border: none;
   border-radius: 48px;
-  background-image: url('../../../images/buttonSearch.svg');
+  font-family: Inter, Georgia, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 18px;
+  color: #FFFFFF;
 }
 .searchForm__textCheckbox {
   margin: 0;
+  margin: 0 30px 0 14px;
   font-family: Inter, Georgia, sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -58,8 +79,11 @@
   color: #000000;
 }
 .searchForm__switch {
+  height: 40px;
   display: flex;
-  margin-left: 40px;
+  align-items: center;
+  margin-left: 30px;
+  border-left: 2px solid rgba(170, 170, 170, 0.2);
 }
 .searchForm__switchCheckbox {
   position: absolute;
@@ -70,7 +94,7 @@
 }
 .searchForm__imgCheckbox {
   display: block;
-  margin-left: 40px;
+  margin-left: 29px;
   width: 36px;
   height: 20px;
   background-image: url('../../../images/checkboxDisableSearchForm.svg');
@@ -80,44 +104,46 @@
 }
 .searchForm__line {
   width: calc(100vw - 140px);
-  margin: 83px 70px 10px;
+  margin: 83px 70px 0;
   border-bottom: 1px solid #E8E8E8;
 }
 @media screen and (max-width: 800px) {
   .searchForm__form {
-    padding-top: 60px;
-    flex-direction: column;
     margin: 0 30px;
   }
-  .searchForm__fildSearch {
-    width: 100%;
-  }
-  .searchForm__buttonSearch {
-    margin: 7px 7px 0 0;
-  }
-  .searchForm__switch {
-    margin: 0;
-    margin-top: 38px;
-  }
   .searchForm__imgCheckbox {
-    margin-left: 12px;
+    margin-left: 19px;
+  }
+  .searchForm__textCheckbox {
+    margin: 0 20px 0 15px;
   }
   .searchForm__line {
     width: calc(100vw - 60px);
-    margin: 57px 30px 10px;
-    border-bottom: 1px solid #E8E8E8;
+    margin: 109px 30px 0;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .searchForm__form {
+    flex-direction: column;
+    width: calc(100vw - 20px);
     margin: 0 10px;
+    background: #ffffff;
+  }
+  .searchForm__fildSearch {
+    width: calc(100vw - 20px);
+    background: #F9F9F9;
   }
   .searchForm__inputText {
     font-size: 11px;
+    margin: 30px 15px;
+  }
+  .searchForm__buttonSearch {
+    margin-right: 19px;
   }
   .searchForm__switch {
     margin: 0;
     margin-top: 45px;
+    border: none;
   }
   .searchForm__textCheckbox {
     font-size: 11px;

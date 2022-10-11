@@ -1,6 +1,6 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
-import foto from '../../../images/foto-student.jpg';
+import foto from '../../../images/photoDiplom.jpg';
 
 function AboutMe (props) {
   return (

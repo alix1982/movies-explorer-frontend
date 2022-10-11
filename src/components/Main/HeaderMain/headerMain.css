@@ -5,14 +5,14 @@
   padding: 0 70px;
   width: calc(100% - 140px);
   height: 74px;
-  background: #073042;
+  background: #5C5C5C;
 }
 .headerMain__user {
   display: flex;
   align-items: center;
 }
 .headerMain__button_register {
-  background: #073042;
+  background: #5C5C5C;
   color: #ffffff;
   border: none;
   text-decoration: none;
