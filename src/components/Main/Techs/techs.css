@@ -97,6 +97,7 @@
 }
 @media screen and (max-width: 400px) {
   .techs {
+    background: #FFFFFF;
     padding-top: 70px;
   }
   .techs__heading {

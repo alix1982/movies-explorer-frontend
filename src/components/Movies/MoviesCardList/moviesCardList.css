@@ -20,6 +20,10 @@
   line-height: 15px;
   color: #000000;
 }
+.moviesCardList__more:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
 @media screen and (max-width: 800px) {
   .moviesCardList__gallery {
     margin: 70px 30px 0;

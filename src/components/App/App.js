@@ -4,24 +4,14 @@ import { Route, Routes, useNavigate } from 'react-router-dom';
 // import '../App.css';
 import moviesCards from '../../utils/moviesCards.js';
 
-import HeaderMain from '../Main/HeaderMain/HeaderMain.js';
-import Promo from '../Main/Promo/Promo.js';
-import NavTab from '../Main/NavTab/NavTab.js';
-import AboutProject from '../Main/AboutProject/AboutProject.js';
-import Techs from '../Main/Techs/Techs.js';
-import AboutMe from '../Main/AboutMe/AboutMe.js';
-import Portfolio from '../Main/Portfolio/Portfolio.js';
-import Footer from '../Footer/Footer.js';
 import Header from '../Header/Header.js';
-import SearchForm from '../Movies/SearchForm/SearchForm.js';
-import MoviesCardList from '../Movies/MoviesCardList/MoviesCardList.js';
-import MoviesCardListSaved from '../SavedMovies/MoviesCardList/MoviesCardList.js';
-
-import Preloader from '../Movies/Preloader/Preloader.js';
+import Main from '../Main/Main.js';
+import Movies from '../Movies/Movies.js';
+import SavedMovies from '../SavedMovies/SavedMovies.js';
+import Footer from '../Footer/Footer.js';
 import Profile from '../Profile/Profile.js';
 import Login from '../Login/Login.js';
 import Register from '../Register/Register.js';
-
 
 import NoRoute from '../NoRoute/NoRoute';
 
@@ -263,13 +253,7 @@ function App() {
       <Routes>
         <Route path="/" element={
           <>
-            <HeaderMain/>
-            <Promo/>
-            <NavTab/>
-            <AboutProject/>
-            <Techs/>
-            <AboutMe/>
-            <Portfolio/> 
+            <Main/>
             <Footer/>
           </>
         }/>
@@ -279,10 +263,9 @@ function App() {
               isNavigationPopupOpen = {isNavigationPopupOpen}
               onPopupNavigation = {handleOnPopupNavigation}
               onClose = {closeAllPopups} onCloseOverlay = {onCloseOverlay} offNavigation = {"Enabled"}
+              auth = {""}
             />
-            <SearchForm/>
-            {/* <Preloader/> */}
-            <MoviesCardList onCards = {moviesCards()} 
+            <Movies onCards = {moviesCards()} 
               isQuantityCards={isQuantityCards} handleOnClickButtonMore={handleOnClickButtonMore}
             />
             <Footer/>
@@ -294,10 +277,9 @@ function App() {
               isNavigationPopupOpen = {isNavigationPopupOpen}
               onPopupNavigation = {handleOnPopupNavigation} onClose = {closeAllPopups}
               onCloseOverlay = {onCloseOverlay} offNavigation = {"Enabled"}
+              auth = {""}
             />
-            <SearchForm/>
-            {/* <Preloader/> */}
-            <MoviesCardListSaved onCards = {moviesCards()} 
+            <SavedMovies onCards = {moviesCards()} 
               isQuantityCards={isQuantityCards} handleOnClickButtonMore={handleOnClickButtonMore}
             />
             <Footer/>
@@ -309,6 +291,7 @@ function App() {
               isNavigationPopupOpen = {isNavigationPopupOpen}
               onPopupNavigation = {handleOnPopupNavigation} onClose = {closeAllPopups}
               onCloseOverlay = {onCloseOverlay} offNavigation = {"Enabled"}
+              auth = {""}
             />
             <Profile onClickPopupWithForm={onClickPopupWithForm}/>
           </>
@@ -319,6 +302,7 @@ function App() {
               isNavigationPopupOpen = {isNavigationPopupOpen}
               onPopupNavigation = {handleOnPopupNavigation} onClose = {closeAllPopups}
               onCloseOverlay = {onCloseOverlay} offNavigation = {"Disabled"}
+              auth = {"Auth"}
             />
             <Login onClickPopupWithForm={onClickPopupWithForm}/>
           </>
@@ -329,6 +313,7 @@ function App() {
               isNavigationPopupOpen = {isNavigationPopupOpen}
               onPopupNavigation = {handleOnPopupNavigation} onClose = {closeAllPopups}
               onCloseOverlay = {onCloseOverlay} offNavigation = {"Disabled"}
+              auth = {"Auth"}
             />
             <Register onClickPopupWithForm={onClickPopupWithForm}/>
           </>

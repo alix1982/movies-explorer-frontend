@@ -74,15 +74,17 @@
   opacity: 0.6;
 }
 .aboutMe__locationFoto {
+  display: flex;
+  align-items: center;
   margin: 0;
   grid-column: 2/3;
   grid-row: 1/5;
 }
 .aboutMe__foto {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
   border-radius: 10px;
+
+  object-fit: contain;
 }
 @media screen and (max-width: 800px) {
   .aboutMe {

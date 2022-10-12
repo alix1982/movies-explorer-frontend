@@ -2,9 +2,10 @@
   margin: 0;
   padding: 0;
   border: none;
+
 }
 .formAuth__fieldInput {
-  width: 31vw;
+  width: 396px;
   margin-bottom: 8px;
 }
 .formAuth__fieldInput:last-child {
@@ -49,25 +50,27 @@
 .formAuth__input {
   width: 396px;
   height: 46px;
+  padding: 0 15px;
   background: #F9F9F9;
   border-radius: 8px;
+  border: none;
 }
 .formProfile__input {
   width: 24vw;
   text-align: end;
 }
 .form__message-error {
-    width: 100%;
-    height: 1.25vw;
-    margin: 0;
-    padding: 0;
-    color: #FF3055;
-    font-family: Inter, Georgia, sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 10px;
-    line-height: 12px;
-  }
+  width: 100%;
+  height: 1.25vw;
+  margin: 0;
+  padding: 0;
+  color: #FF3055;
+  font-family: Inter, Georgia, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+}
 .formProfile__message-error {
   display: inline;
   text-align: end;

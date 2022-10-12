@@ -1,6 +1,6 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
-import search from '../../../images/buttonSearch.svg';
+import { useState } from 'react';
+import search from '../../images/buttonSearch.svg';
 
 function SearchForm (props) {
   const [isSearchFormTextPlaceholder, setIsSearchFormTextPlaceholder] = useState(false);
@@ -15,9 +15,9 @@ function SearchForm (props) {
     <section className="searchForm">
       <form className="searchForm__form">
         <fieldset className="searchForm__fildSearch">
-          <input className="searchForm__inputText" name="serchFilm" onChange={disabledPlaceholder}/>
+          <input className="searchForm__inputText" name="searchFilm" onChange={disabledPlaceholder} required/>
           <div className={`searchForm__placeholder ${isSearchFormTextPlaceholder && 'searchForm__placeholder_disable'}`}>
-            <img src={search} className="searchForm__placeholderImg"/>
+            <img src={search} className="searchForm__placeholderImg" alt="поиск"/>
             <p className="searchForm__placaholderText">Фильм</p>
           </div>
           <button className="searchForm__buttonSearch">Найти</button>

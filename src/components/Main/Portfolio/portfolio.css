@@ -16,31 +16,32 @@
   list-style-type: none;
 }
 .portfolio__point {
-  display: flex;
-  justify-content: space-between;
   margin: 0;
   border-bottom: 1px solid #E6E6E6;
 }
 .portfolio__point:last-child {
   border-bottom: none;
 }
-.portfolio__text {
+.portfolio__link {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
   margin: 20px auto 20px 0;
+  text-decoration: none;
+}
+.portfolio__link:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+.portfolio__text {
+  margin: 0;
+  padding: 0;
   font-family: Inter, Georgia, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 30px;
   line-height: 50px;
-}
-.portfolio__link {
-  width: 30px;
-  height: 30px;
-  align-self: center;
-  background: url('../../../images/link-icon.svg') center no-repeat;
-}
-.portfolio__link:hover {
-  cursor: pointer;
-  opacity: 0.6;
+  color: #000000;
 }
 @media screen and (max-width: 800px) {
   .portfolio__heading {

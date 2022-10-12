@@ -6,13 +6,13 @@ function NavTab (props) {
     <section className="navTab">
       <ul className="navTab__list">
         <li className="navTab__shellLink">
-          <a href="#aboutProject" className="navTab__link" >О проекте</a>
+          <a href="#aboutProject" className="navTab__link">О проекте</a>
         </li>
         <li className="navTab__shellLink">
-          <a href="#techs" className="navTab__link" >Технологии</a>
+          <a href="#techs" className="navTab__link">Технологии</a>
         </li>
         <li className="navTab__shellLink">
-          <a href="#aboutMe" className="navTab__link" >Студент</a>
+          <a href="#aboutMe" className="navTab__link">Студент</a>
         </li>
       </ul>
     </section>

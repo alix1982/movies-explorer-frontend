@@ -43,9 +43,15 @@
 .card__like {
   display: block;
   border: none;
+  padding: 0;
   width: 24px;
   height: 24px;
   background: #ffffff url('../../../images/checkboxDisableLike.svg');
+}
+.card__like:hover {
+  cursor: pointer;
+  border-radius: 50%;
+  border: 1px solid #A0A0A0
 }
 .card__like_save {
   display: block;
@@ -53,6 +59,11 @@
   width: 24px;
   height: 24px;
   background: #ffffff url('../../../images/deleteCard.svg');
+}
+.card__like_save:hover {
+  cursor: pointer;
+  border-radius: 50%;
+  border: 1px solid #0000002c
 }
 .card__likeActive {
   background-image: url('../../../images/checkboxActiveLike.svg');
