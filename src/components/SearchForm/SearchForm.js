@@ -1,25 +1,15 @@
 import React from 'react';
-import { useState } from 'react';
 import search from '../../images/buttonSearch.svg';
 
 function SearchForm (props) {
-  const [isSearchFormTextPlaceholder, setIsSearchFormTextPlaceholder] = useState(false);
-  function disabledPlaceholder () {
-    const input=document.querySelector('.searchForm__inputText')
-    if (input.value) {
-      setIsSearchFormTextPlaceholder(true);
-    } else (setIsSearchFormTextPlaceholder(false))
-  };
-  
+  // placeholder="&#128269; Фильм"
+
   return (
     <section className="searchForm">
       <form className="searchForm__form">
         <fieldset className="searchForm__fildSearch">
-          <input className="searchForm__inputText" name="searchFilm" onChange={disabledPlaceholder} required/>
-          <div className={`searchForm__placeholder ${isSearchFormTextPlaceholder && 'searchForm__placeholder_disable'}`}>
-            <img src={search} className="searchForm__placeholderImg" alt="поиск"/>
-            <p className="searchForm__placaholderText">Фильм</p>
-          </div>
+          <img src={search} className="searchForm__placeholderImg" alt="поиск"/>
+          <input className="searchForm__inputText" name="searchFilm" placeholder= "Фильм" required />
           <button className="searchForm__buttonSearch">Найти</button>
         </fieldset>
         <label htmlFor="searchFormCheckbox" className="searchForm__switch">
