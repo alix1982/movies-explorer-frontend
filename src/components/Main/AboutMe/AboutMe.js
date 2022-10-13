@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 import foto from '../../../images/photoDiplom.jpg';
 
 function AboutMe (props) {
@@ -15,8 +14,6 @@ function AboutMe (props) {
         <p className="aboutMe__work">Спасатель, 40 лет</p>
         <p className="aboutMe__live">Я родился и живу в Северодвинске, закончил факультет кораблестроения САФУ. Я люблю слушать музыку, а ещё увлекаюсь бегом. Недавно начал кодить. С 2007 года работаю в службе спасения.</p>
         <a className="aboutMe__linkGithub" href="https://github.com/alix1982" target="_blank" rel="noreferrer">Github</a>
-        
-        {/* <Link to="/sign-in" className="aboutMe__link" >О проекте</Link> */}
       </div>
     </section>
   )
