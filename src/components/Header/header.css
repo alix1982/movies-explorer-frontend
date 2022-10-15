@@ -35,22 +35,18 @@
     margin-top: 232px;
   }
   .header__nav {
-    /* display: none; */
     margin-right: 30px;
   }
 }
 @media screen and (max-width: 500px) {
   .headerAuth {
     width: 335px;
-    justify-content: center;
   }
 }
 @media screen and (max-width: 400px) {
-  .header {
-    /* justify-content: center; */
-  }
   .headerAuth {
     width: 260px;
+    justify-content: center;
   }
   .header__logo {
     margin: 30px;

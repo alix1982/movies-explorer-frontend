@@ -23,6 +23,7 @@
   border: none;
   border-radius: 9px;
 }
+
 .searchForm__inputText {
   width: 90%;
   padding: 0;
@@ -40,6 +41,13 @@
 .searchForm__inputText:focus {
   border-bottom: 1px solid #A0A0A0;
 }
+/* .searchForm__inputText::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background-image: url('../../images/buttonSearch.svg');
+  margin-left: 19px;
+} */
 .searchForm__placeholderImg {
   margin-left: 19px;
 }
