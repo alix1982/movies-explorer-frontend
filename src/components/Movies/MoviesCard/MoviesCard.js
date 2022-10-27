@@ -1,33 +1,33 @@
 import React from 'react';
 import {useEffect, useState} from 'react';
 
-import film from '../../../images/film.png';
-
 function Card (props) {
+  const film = `https://api.nomoreparties.co${props.card.image.url}`;
 
-  const [isOnCardLike, setIsOnCardLike] = useState(false);
-  // ((!props.card.owner) ? setIsOnCardLike(false) : setIsOnCardLike(true))
+  // установка лайка
+  const [isOnCardLike, setIsOnCardLike] = useState(false);  
 
-  const buttonLikeClassName = (`card__like ${isOnCardLike && 'card__likeActive'}`);
-  
+  function addLike () {
+    props.currentCardMain.forEach((c) => {
+      if (c.movieId === props.card.id) {setIsOnCardLike(true)}
+    });
+  };
+  useEffect(()=>{addLike()},[props.currentCardMain]);
   function handleCardLike () {
     ((!isOnCardLike) ? setIsOnCardLike(true) : setIsOnCardLike(false));
-    ((!props.card.owner) ? props.card.owner = "633490f552e1e44d60014077" : delete props.card.owner)
-    console.log(props.card);
-  }
-  useEffect(()=>{
-    ((!props.card.owner) ? setIsOnCardLike(false) : setIsOnCardLike(true));
-  }, [isOnCardLike])
+    ((!isOnCardLike) ? props.onCardLike(props.card) : props.offCardLike(props.card));
+    // props.offCardLike(props.card);
+    // localStorage.setItem('arrMovies', JSON.stringify({arrMovies: props.currentCard}))
+  };
+  
   return (
     <section className="card">
-      <img src= {film} className="card_film" alt="Логотип"/>
+      <img src= {film} className="card__film" alt="постер"/>
       <div className="card__info">
        <p className="card__name">{props.card.nameRU}</p>
-       <button className={buttonLikeClassName} type="button" onClick={handleCardLike}></button>
-       {/* <label htmlFor="likeFilm" className="card__switch" onClick={handleCardLike(props.card)}>
-          <input className="card__switchCheckbox" id="likeFilm" type="checkbox" />
-          <span className="card__imgCheckbox" ></span>
-        </label> */}
+        <button 
+        className={`card__like ${(isOnCardLike) && 'card__likeActive'}`}
+        type="button" onClick={handleCardLike}></button> 
       </div>
       <div className="card__line"></div>
       <p className="card__time">{props.card.duration}</p>

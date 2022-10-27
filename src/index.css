@@ -12,7 +12,9 @@
 @import url(components/Footer/footer.css);
 @import url(components/Header/header.css);
 @import url(components/Navigation/navigation.css);
-@import url(components/SearchForm/searchForm.css);
+@import url(components/Movies/SearchForm/searchForm.css);
+@import url(components/SavedMovies/SearchForm/searchForm.css);
+
 @import url(components/Movies/MoviesCardList/moviesCardList.css);
 @import url(components/Movies/MoviesCard/moviesCard.css);
 @import url(components/Preloader/preloader.css);

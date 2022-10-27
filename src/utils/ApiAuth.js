@@ -1,10 +1,29 @@
 import { useNavigate } from 'react-router-dom';
-import { BASE_URL } from './Api.js';
+import { MAIN_URL } from './MainApi.js';
 
 export function useApiAuth () {
   let navigate = useNavigate();
-  function register (password, email, urlApi, urlRoute, setIsRegisterSuccessOpen, setIsRegisterSuccess) {
-    return fetch(`${BASE_URL}${urlApi}`, {
+  function register (name, email, password) {
+    return fetch(`${MAIN_URL}/signup`, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        password: password
+      })
+    })
+      .then((response) => {
+        if (response.ok) {return response.json()}
+        else {navigate('/signup')}
+        return Promise.reject(`Ошибка: ${response.status}`);
+      })
+  }
+  function login (email, password) {
+    return fetch(`${MAIN_URL}/signin`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -17,20 +36,14 @@ export function useApiAuth () {
     })
       .then((response) => {
         if (response.ok) {return response.json()}
-        else {
-          setIsRegisterSuccess({
-            classIcon: 'popupInfoTooltip__iconNotSuccessfully',
-            text: 'Что-то пошло не так! Попробуйте ещё раз.'
-          })
-          setIsRegisterSuccessOpen(true);
-          navigate(urlRoute);
-        }
+        else { navigate('/signin') }
         return Promise.reject(`Ошибка: ${response.status}`);
       })
   }
   // поменять `${BASE_URL}/users/me` для локального сервера 'https://auth.nomoreparties.co/users/me'
   const checkToken = () => {
-    return fetch (`${BASE_URL}/users/me`, {
+    // console.log(localStorage.getItem('token'))
+    return fetch (`${MAIN_URL}/users/me`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -38,5 +51,5 @@ export function useApiAuth () {
       },
     })
   }
-  return {register, checkToken}
+  return {register, login, checkToken}
 }

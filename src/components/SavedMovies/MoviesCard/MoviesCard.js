@@ -1,30 +1,24 @@
 import React from 'react';
-import {useEffect, useState} from 'react';
-
-import film from '../../../images/film.png';
+import { useState } from 'react';
 
 function Card (props) {
-  const [isOnCardLike, setIsOnCardLike] = useState(false);
-  const buttonLikeClassName = (`card__like_save ${isOnCardLike && 'card__likeActive_save'}`);
-  
+  const film = props.card.image;
+  console.log(film)
+
+  // отрисовка карточек и их удаление
+  const [isOnCardDelete, setIsOnCardDelete] = useState(false);  
+
   function handleCardLike () {
-    ((!isOnCardLike) ? setIsOnCardLike(true) : setIsOnCardLike(false));
-    ((!props.card.owner) ? props.card.owner = "633490f552e1e44d60014077" : delete props.card.owner)
-    console.log(props.card);
-  }
-  useEffect(()=>{
-    ((!props.card.owner) ? setIsOnCardLike(false) : setIsOnCardLike(true));
-  }, [isOnCardLike])
+    props.offCardLike(props.card);
+    setIsOnCardDelete(true)
+  };
+  
   return (
-    <section className="card">
-      <img src= {film} className="card_film" alt="Логотип"/>
+    <section className={`card ${(isOnCardDelete) && 'card_disabled'}`}>
+      <img src= {film} className="card__film" alt="постер"/>
       <div className="card__info">
        <p className="card__name">{props.card.nameRU}</p>
-       <button className={buttonLikeClassName} type="button" onClick={handleCardLike}></button>
-       {/* <label htmlFor="likeFilm" className="card__switch" onClick={handleCardLike(props.card)}>
-          <input className="card__switchCheckbox" id="likeFilm" type="checkbox" />
-          <span className="card__imgCheckbox" ></span>
-        </label> */}
+        <button className="card__like_save" type="button" onClick={handleCardLike}></button>
       </div>
       <div className="card__line"></div>
       <p className="card__time">{props.card.duration}</p>

@@ -6,6 +6,7 @@
   padding: 0;
 }
 .moviesCardList__more {
+  display: none;
   width: calc(100vw - 140px);
   height: 36px;
   margin: 50px 70px 80px;
@@ -19,6 +20,9 @@
   font-size: 12px;
   line-height: 15px;
   color: #000000;
+}
+.moviesCardList__more_active {
+  display: block;
 }
 .moviesCardList__more:hover {
   cursor: pointer;

@@ -3,10 +3,14 @@
   flex-direction: column;
   margin: 14px 10px;
 }
+.card_disabled {
+  display: none;
+}
 .card__film {
+  display: block;
   width: 270px;
   height: 151px;
-  object-fit: contain;
+  /* object-fit: contain; */
 }
 .card__info {
   display: flex;
@@ -15,6 +19,12 @@
   margin-top: 14px;
 }
 .card__name {
+  display: block;
+  width: 240px;
+  height: 32px;
+  overflow: hidden;
+  /* text-overflow: ellipsis; */
+  /* white-space: nowrap; */
   margin: 0;
   font-family: Inter, Georgia, sans-serif;
   font-style: normal;
@@ -73,7 +83,7 @@
 }
 .card__line {
   width: 100%;
-  margin: 29px 0 6px;
+  margin: 13px 0 6px;
   border-bottom: 1px solid #E8E8E8;
 }
 .card__time {

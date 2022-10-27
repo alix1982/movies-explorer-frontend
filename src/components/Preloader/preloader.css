@@ -43,25 +43,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 50%;
   height: 100%;
+  margin: 0 auto;
   z-index: 10;
-  padding: 20px;
+  padding: 20px 0;
 }
-
 .preloader__container {
   width: 100px;
   height: 100px;
   position: relative;
 }
-
+.preloader__container_disable {
+  display: none;
+}
 .preloader__round {
   width: 100px;
   height: 100px;
   position: absolute;
   top: 0;
   left: 0;
-  background: #3456F3;
+  background: #2BE080;
   border-radius: 50px;
 }
 
@@ -83,6 +85,16 @@
 
 .preloader__round::before {
   z-index: 10;
-  background: #3456F3;
+  background: #2BE080;
   animation: preloader-inside-red 1s ease-in-out infinite;
+}
+.preloader__text {
+  display: block;
+  text-align: center;
+  font-family: Inter, Georgia, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 20px;
+  color: #000000;
 }
